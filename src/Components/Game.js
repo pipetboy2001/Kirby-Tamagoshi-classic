@@ -3,6 +3,11 @@ import swal from 'sweetalert';
 import { ProgressBar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/Game.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faCaretSquareRight, faLeaf } from '@fortawesome/free-solid-svg-icons';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+
 
 export const Game= () => {
     // Estados para los parámetros de Tamagoshi
@@ -175,8 +180,14 @@ export const Game= () => {
                 <div className="black-background">
                     <h1>Kirby x Tamagotchi Game</h1>
                     <img src={tamagoshiImage} alt="Tamagoshi" />
-                    <p>Record: {record}</p>
-                    <p style={{ fontFamily: 'Arial, sans-serif' }}>Age: {age}</p>
+                    <p>
+                        <FontAwesomeIcon icon={faTrophy} /> Record: {record}
+                    </p>
+
+                    <p style={{ fontFamily: 'Arial, sans-serif' }}>
+                        <FontAwesomeIcon icon={faClock} /> Age: {age}
+                    </p>
+
                     <div>
                         <ProgressBar now={hunger} variant={getProgressBarColor(hunger)} />
                         <p>Hunger: {hunger}</p>
@@ -190,9 +201,15 @@ export const Game= () => {
                         <p>Health: {health}</p>
                     </div>
 
-                    <button className="btn btn-primary" onClick={feed}>Feed</button>
-                    <button className="btn btn-secondary" onClick={play}>Play</button>
-                    <button className="btn btn-success" onClick={heal}>Heal</button>
+                    <button className="btn btn-primary" onClick={feed}>
+                        <FontAwesomeIcon icon={faLeaf} /> Feed
+                    </button>
+                    <button className="btn btn-secondary" onClick={play}>
+                        <FontAwesomeIcon icon={faCaretSquareRight} /> Play
+                    </button>
+                    <button className="btn btn-success" onClick={heal}>
+                        <FontAwesomeIcon icon={faHeart} /> Heal
+                    </button>
                 </div>
             </center>
         </div>
