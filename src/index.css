@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.black-background {
+  color: black;
+  background-color: #f9f882;
+  border: 3% solid white;
+  border-radius: 2%;
+  width: 50%;
+  /* Tamaño del ancho en porcentaje */
+  height: 300%;
+  /* Tamaño del alto en píxeles */
+  padding:2%;
+}
+
+
+
