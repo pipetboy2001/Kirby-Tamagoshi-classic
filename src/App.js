@@ -10,6 +10,8 @@ const TamagoshiGame = () => {
   const [happiness, setHappiness] = useState(50);
   const [age, setAge] = useState(0);
   const [health, setHealth] = useState(100);
+  // Estado para el record de edad
+  const [record, setRecord] = useState(0);
 
   let tamagoshiImage;
   if (hunger <= 30 || happiness <= 30 || health <= 30) {
@@ -95,6 +97,22 @@ const TamagoshiGame = () => {
     }
   };
 
+  // Función para actualizar el record de edad
+  const updateRecord = () => {
+    if (age > record) {
+      setRecord(age);
+      localStorage.setItem('record', age);
+    }
+  }
+  useEffect(updateRecord, [age]);
+  // Carga el record de edad del almacenamiento local cuando se monta el componente
+  useEffect(() => {
+    const storedRecord = localStorage.getItem('record');
+    if (storedRecord) {
+      setRecord(parseInt(storedRecord));
+    }
+  }, []);
+
   return (
     <div>
       <center>
@@ -103,6 +121,7 @@ const TamagoshiGame = () => {
           <h1>Tamagoshi Game</h1>
 
           <img src={tamagoshiImage} alt="Tamagoshi" />
+          <p>Record: {record}</p>
           <p style={{ fontFamily: 'Arial, sans-serif' }}>Age: {age}</p>
 
           <div>
