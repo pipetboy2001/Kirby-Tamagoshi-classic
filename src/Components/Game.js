@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import swal from 'sweetalert';
 import { ProgressBar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import '../css/Game.css';
 
 export const Game= () => {
     // Estados para los parámetros de Tamagoshi
@@ -14,14 +14,27 @@ export const Game= () => {
 
     // Hook para ejecutar un intervalo
     let tamagoshiImage;
+    //si hambre es menor o igual a 30 o felicidad es menor o igual a 30 o salud es menor o igual a 30
     if (hunger <= 30 || happiness <= 30 || health <= 30) {
-        tamagoshiImage = './Image/sad-kirby.jpg'
-    } else if (hunger > 30 && happiness > 30 && health > 30) {
-        tamagoshiImage = '../src/Image/neutral-kirby.jpg';
-    } else {
-        tamagoshiImage = './Image/happy-kirby.jpg';
-    }
+        tamagoshiImage = 'https://i.imgur.com/Okh86g4.png';
+    } 
+    //si hambre es igual a 0 o felicidad es igual a 0 o salud es igual a 0
+    else if(hunger === 0 || happiness === 0 || health === 0) {
+        tamagoshiImage = 'https://i.imgur.com/29jrgnP.png';
 
+    } 
+    //si hambre es mayor a 90 o felicidad es mayor a 90 o salud es mayor a 90
+    else if (happiness > 90 && hunger > 95 && health > 90) {
+        tamagoshiImage = 'https://i.imgur.com/kQooJxm.png';
+    }
+    //si hambre es mayor a 80 y felicidad es mayor a 80 y salud es mayor a 80
+    else if (hunger > 80 && happiness > 80 && health > 80) {
+        tamagoshiImage = 'https://i.imgur.com/wWoMWxA.png';
+    }
+    //si hambre es mayor a 30 y felicidad es mayor a 30 y salud es mayor a 30
+    else if (hunger > 30 && happiness > 30 && health > 30) {
+        tamagoshiImage = 'https://i.imgur.com/EHOnPps.png';
+    }
     // Función para actualizar la edad del Tamagoshi
     useInterval(() => {
         setAge(age + 1);
@@ -31,7 +44,13 @@ export const Game= () => {
                 text: 'Do you want to restart the game?',
                 icon: 'warning',
                 buttons: ['Cancel', 'OK'],
-                dangerMode: true
+                dangerMode: true,
+                content: {
+                    element: 'div',
+                    attributes: {
+                        className: 'custom-swal-text, custom-swal'
+                    }
+                }
             }).then((result) => {
                 if (result) {
                     // Restart the game
@@ -53,7 +72,13 @@ export const Game= () => {
                 text: 'Do you want to restart the game?',
                 icon: 'warning',
                 buttons: ['Cancel', 'OK'],
-                dangerMode: true
+                dangerMode: true,
+                content: {
+                    element: 'div',
+                    attributes: {
+                        className: 'custom-swal-text, custom-swal'
+                    }
+                }
             }).then((result) => {
                 if (result) {
                     // Restart the game
@@ -65,12 +90,10 @@ export const Game= () => {
             });
         }
     }, 2000);
-
     // Función para actualizar el estado de felicidad del Tamagoshi
     useInterval(() => {
         setHappiness(happiness - 1);
     }, 4000);
-
     // Función para actualizar el estado de salud del Tamagoshi
     useInterval(() => {
         setHealth(health - 1);
@@ -80,7 +103,14 @@ export const Game= () => {
                 text: 'Do you want to restart the game?',
                 icon: 'warning',
                 buttons: ['Cancel', 'OK'],
-                dangerMode: true
+                dangerMode: true,
+                content: {
+                    element: 'div',
+                    attributes: {
+                        className: 'custom-swal-text, custom-swal'
+
+                    }
+                }
             }).then((result) => {
                 if (result) {
                     // Restart the game
@@ -127,9 +157,10 @@ export const Game= () => {
         }
     }
     // Actualiza el record de edad cuando cambia la edad
-    useEffect(updateRecord, [age]);
-    // Carga el record de edad del almacenamiento local cuando se monta el componente
+    useEffect(updateRecord, [age,record]);
+    // Carga el record de edad desde el localStorage
     useEffect(() => {
+        // Código que utiliza la variable "record"
         const storedRecord = localStorage.getItem('record');
         if (storedRecord) {
             setRecord(parseInt(storedRecord));
@@ -137,17 +168,15 @@ export const Game= () => {
     }, []);
 
 
+
     return (
         <div>
             <center>
                 <div className="black-background">
-
-                    <h1>Tamagoshi Game</h1>
-
+                    <h1>Kirby x Tamagotchi Game</h1>
                     <img src={tamagoshiImage} alt="Tamagoshi" />
                     <p>Record: {record}</p>
                     <p style={{ fontFamily: 'Arial, sans-serif' }}>Age: {age}</p>
-
                     <div>
                         <ProgressBar now={hunger} variant={getProgressBarColor(hunger)} />
                         <p>Hunger: {hunger}</p>
@@ -166,8 +195,6 @@ export const Game= () => {
                     <button className="btn btn-success" onClick={heal}>Heal</button>
                 </div>
             </center>
-            {/* FAQ */}
-            
         </div>
     )
 }
