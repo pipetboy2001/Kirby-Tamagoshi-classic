@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+<div align="center">
+      <h1> <img src="https://kirby.nintendo.com/assets/img/kirby-logo.png" width="80px"><br/>Tamagotchi Kirby</h1>
+     </div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
 
-### `npm start`
+Este proyecto es un juego de Tamagotchi inspirado en el personaje de Kirby. El juego está desarrollado principalmente en React utilizando JavaScript y CSS y se puede jugar desde la siguiente URL: [http://kirby-tamagoshi.vercel.app/](http://kirby-tamagoshi.vercel.app/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Características
+Este trabajo no está afiliado ni tiene ninguna relación con Nintendo® , Se utilizo como aprendizaje de JavaScript y CSS para realizar una simulación de las mascotas virtuales Tamagotchi las cuales pueden 
+- Alimentar , Jugar y Sanar
+- Una barra de vida que va disminuyendo con el paso del tiempo 
+- Pueden morir en caso que la vida llegue a 0 
+ 
+# Screenshots
+ <img src="https://i.imgur.com/55aOPHx.png">
+ 
+# Tecnología utilizada
+ ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+      
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+Para instalar y ejecutar este proyecto en tu computadora, sigue estos pasos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  Clona este repositorio en tu computadora usando `git clone https://github.com/pipetboy2001/Kirby-Tamagoshi`.
+2.  Asegúrate de tener Node.js y npm instalados en tu computadora. Si no los tienes, puedes descargarlos de [aquí](https://nodejs.org/en/download/).
+3.  Accede a la carpeta del proyecto y instala las dependencias ejecutando `npm install`.
+4.  Arranca el servidor de desarrollo ejecutando `npm start`. Esto debería abrir automáticamente el juego en tu navegador.
 
-### `npm run build`
+## Uso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Una vez que el juego esté ejecutándose en tu navegador, podrás interactuar con él de la siguiente manera:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   Usa los botones situados en la parte inferior de la pantalla para alimentar, jugar y curar a tu Tamagotchi de Kirby.
+-   Ten en cuenta que cada acción que realices afectará a los niveles de hambre, felicidad y salud de tu Tamagotchi. Trata de mantener estos niveles equilibrados para que tu Tamagotchi esté contento y saludable.
+## Créditos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   [Pipetboy](https://github.com/pipetboy2001)
 
-### `npm run eject`
+También queremos dar las gracias a todos los que han contribuido con ideas y sugerencias para mejorar este proyecto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Licencia
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto está licenciado bajo la licencia MIT. Para ver más detalles, consulta el archivo [LICENSE](https://chat.openai.com/LICENSE) incluido en este repositor
+    
