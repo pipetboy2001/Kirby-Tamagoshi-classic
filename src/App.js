@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import  FAQ  from './Components/FAQ';
-import { Game } from './Components/Game';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import Egg from './Components/Game';
 
 
 const TamagoshiGame = () => {
@@ -17,7 +17,8 @@ const TamagoshiGame = () => {
     <>
       <div className='fondo'>
         {/* Tamagoshi */}
-        <Game />
+        <Egg />
+
         {/* FAQ */}
         {isFAQVisible && <FAQ toggleFAQ={toggleFAQ} />}
         <button style={{ backgroundColor: '#080c51', color: 'white' }} onClick={toggleFAQ}>
