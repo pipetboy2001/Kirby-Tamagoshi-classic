@@ -206,14 +206,17 @@ export const Game = () => {
 
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Estado del Tamagoshi</Modal.Title>
+                    <Modal.Title>Estado del Kirby</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Edad: {age} Años<br />
-                    Hambre: {hunger}<br />
-                    Felicidad: {happiness}<br />
-                    Salud: {health}
+                    Edad: {age} Años
+                    <br></br>
+                    Hambre: <ProgressBar now={hunger} variant="warning" label={`${hunger}%`} />
+                    Felicidad: <ProgressBar now={happiness} variant="success" label={`${happiness}%`} />
+                    Salud: <ProgressBar now={health} variant="info" label={`${health}%`} />
+                    
                 </Modal.Body>
+
             </Modal>
         </div>
     )
