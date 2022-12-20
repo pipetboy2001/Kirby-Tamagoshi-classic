@@ -13,17 +13,6 @@ code {
 }
 
 .fondo{
-  background-color: pink;
+  background-color: #fdd2d9;
 }
 
-.cuadro {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f9f882;
-  border: 1px solid black;
-  width: 500px;
-  height: 300px;
-  overflow: auto;
-}
