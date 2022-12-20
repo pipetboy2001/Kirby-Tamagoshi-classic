@@ -48,9 +48,9 @@ export const Game = () => {
         setAge(age + 1);
         if (age === 99) {
             swal({
-                title: 'Tamagoshi has died of old age, Congartulation!',
-                text: 'Do you want to restart the game?',
-                icon: 'warning',
+                title: 'Kirby ha tenido una vida larga, Felicidades!',
+                text: 'Quieres reseter el juego',
+                icon: 'Success',
                 buttons: ['Cancel', 'OK'],
                 dangerMode: true,
                 content: {
@@ -82,8 +82,8 @@ export const Game = () => {
         setHunger(hunger - 1);
         if (hunger === 0) {
             swal({
-                title: 'Tamagoshi has died of starvation',
-                text: 'Do you want to restart the game?',
+                title: 'Kirby ha muerto de hambre',
+                text: 'Quieres reseter el juego',
                 icon: 'warning',
                 buttons: ['Cancel', 'OK'],
                 dangerMode: true,
@@ -113,8 +113,8 @@ export const Game = () => {
         setHealth(health - 1);
         if (health === 0) {
             swal({
-                title: 'Tamagoshi has died',
-                text: 'Do you want to restart the game?',
+                title: 'Kirby ha muerto de enfermedad',
+                text: 'Quieres reseter el juego?',
                 icon: 'warning',
                 buttons: ['Cancel', 'OK'],
                 dangerMode: true,
@@ -152,16 +152,7 @@ export const Game = () => {
         setHealth(health + 5 > 100 ? 100 : health + 5);
     };
 
-    // Función para obtener el color de la barra de progreso
-    const getProgressBarColor = (value) => {
-        if (value > 80) {
-            return 'success';
-        } else if (value > 30) {
-            return 'warning';
-        } else {
-            return 'danger';
-        }
-    };
+
 
     // Función para actualizar el record de edad
     const updateRecord = () => {
@@ -191,16 +182,23 @@ export const Game = () => {
     return (
         <div className="egg">
             <h1 className="character-name">Kirby</h1>
-            <h2 className="character-age">Edad: {age} Años</h2>
-            <h2 className="character-age">Record: {record} Años</h2>
+            <h2 className="character-age"><FontAwesomeIcon icon={faClock} /> Edad: {age} Años</h2>
+            <h2 className="character-age"><FontAwesomeIcon icon={faTrophy} /> Record: {record} Años</h2>
             <button onClick={() => setShowModal(true)}>Estado</button>
             <div className="square">
                 <img src={tamagoshiImage} alt="Imagen del cuadrado" />
             </div>
             <div className="buttons">
-                <button onClick={() => setHunger(Math.min(hunger + 10, 100))}>Comer</button>
-                <button onClick={() => setHappiness(Math.min(happiness + 10, 100))}>Jugar</button>
-                <button onClick={() => setHealth(Math.min(health + 10, 100))}>Sanar</button>
+                <button onClick={() => setHunger(Math.min(hunger + 10, 100))}>
+                    <FontAwesomeIcon icon={faLeaf} /> Comer
+                </button>
+                <button onClick={() => setHappiness(Math.min(happiness + 10, 100))}>
+                    <FontAwesomeIcon icon={faHeart} /> Jugar
+                </button>
+                <button onClick={() => setHealth(Math.min(health + 10, 100))}>
+                    <FontAwesomeIcon icon={faCaretSquareRight} /> Sanar
+                </button>
+
             </div>
             <h1 className="character-name">Tiempo de juego: {elapsedTimeFormatted} Seg.</h1>
 
