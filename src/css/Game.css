@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Kirby Classic';
-    src: url('../fonts/kirby-classic.ttf' ) format('truetype');
+    src: url('../fonts/kirby-classic.ttf') format('truetype');
 }
 
 /*Figura de huevo para colocar el personje*/
@@ -11,12 +11,13 @@
     height: 539px;
     max-width: 400px;
     border-radius: 50%;
-    background-color:#f9f882;
+    background-color: #f9f882;
     /*Añadir despues un diseño de extrellas*/
     margin: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 128, 0.5);
     /*box-shadow: h-offset v-offset blur spread color;*/
 }
+
 /*Texto nombre personaje*/
 .character-name {
     font-family: 'Kirby Classic';
@@ -27,50 +28,60 @@
     text-align: center;
     margin-top: 10%;
 }
+
 /*Texto de la edad*/
-.character-age{
-        font-size: 100%;
-        font-weight: bold;
-        color: blue;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
+.character-age {
+    font-size: 100%;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
+
 /*Cuadrado donde esta el png*/
 .square {
     height: 200px;
     width: 200px;
     background-color: #ccc;
     border-radius: 2%;
-    margin-top: 2%; 
+    margin-top: 2%;
     border: 5px solid #ff0066;
     /*border: width style color;*/
     border-radius: 10%;
     box-shadow: 0 4px 6px rgba(0, 0, 128, 0.5);
 }
-.square :hover {
-    background-color: rgb(239, 140, 203);
-    border-radius: 2%;
-    cursor: pointer;
+
+
+.gif {
+    background: 50% 50% no-repeat;
+    /* 50% 50% centers image in div */
+    width: 190px;
+    height: 190px;
+    border-radius: 7%;
+
+
 }
 
-img{
+img {
     width: 100%;
     height: 100%;
 }
+
 /*Botones inferiores*/
 .buttons {
     display: flex;
     width: 100%;
-    margin-top: 1%; 
-    justify-content: center; 
+    margin-top: 1%;
+    justify-content: center;
 }
+
 .buttons :hover {
     background-color: #ccc;
     border-radius: 2%;
     cursor: pointer;
 }
 
-.buttonsUp{
+.buttonsUp {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }

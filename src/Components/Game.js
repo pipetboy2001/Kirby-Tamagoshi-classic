@@ -50,6 +50,22 @@ export const Game = () => {
     const [record, setRecord] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [elapsedTime, setElapsedTime] = useState(0);
+    // Agrega la variable showGif y establece su valor inicial en false
+    const [showGif, setShowGif] = useState(false);
+    const [gif, setGif] = useState(null);
+
+    // Modifica la función showGif para que cambie el valor de showGif a true
+    // y establezca un temporizador para que vuelva a cambiar el valor de showGif a false
+    // después de 3 segundos
+    const displayGif = () => {
+        setShowGif(true);
+        setTimeout(() => {
+            setShowGif(false);
+        }, 3000
+        );
+    };
+
+
     
     // Función para actualizar la edad del Tamagoshi
     useInterval(() => {
@@ -170,20 +186,39 @@ export const Game = () => {
             <h2 className="character-age"> <GiLaurelsTrophy /> Record: {record} Años</h2>
             <button className='buttonsUp' onClick={() => setShowModal(true)}><MdOutlineAdsClick /> Estado</button>
             <div className="square">
-                <TamagoshiImage hunger={hunger} happiness={happiness} health={health} />
-                {/* <img src={tamagoshiImage} alt="Imagen del cuadrado" /> */}
+                <div className="square-content">
+                    {/* Muestra el GIF si showGif es true y muestra el tamagoshi si showGif es false */}
+                    {showGif ? <img className='gif' src={gif} alt="Gif" /> : <TamagoshiImage hunger={hunger} happiness={happiness} health={health} />}
+                </div>
             </div>
-            <div className="buttons">
-                <button onClick={() => setHunger(Math.min(hunger + 10, 100))}>
-                    <IoFastFoodOutline /> Comer
-                </button>
-                <button onClick={() => setHappiness(Math.min(happiness + 10, 100))}>
-                    <GrGamepad /> Jugar
-                </button>
-                <button onClick={() => setHealth(Math.min(health + 10, 100))}>
-                    <MdOutlineHealthAndSafety /> Sanar
-                </button>
+
+            <div>
+                <div className="buttons">
+                    <button onClick={() => {
+                        setHunger(Math.min(hunger + 10, 100));
+                        setGif('https://i.giphy.com/media/R6oW8JAJxqRxe/giphy.webp');
+                        displayGif();
+                    }}>
+                        <IoFastFoodOutline/> Comer
+                    </button>
+                    <button onClick={() => {
+                        setHappiness(Math.min(happiness + 10, 100));
+                        setGif('https://i.giphy.com/media/uQkKavfX6TER2/giphy.webp');
+                        displayGif();
+                    }}>
+                        <GrGamepad/> Jugar
+                    </button>
+                    <button onClick={() => {
+                        setHealth(Math.min(health + 10, 100));
+                        setGif('https://64.media.tumblr.com/62a6ea40278de0931ad16726b7017e01/tumblr_n0w505oIli1ru09vqo1_500.gifv');
+                        displayGif();
+                    }}>
+                        <MdOutlineHealthAndSafety/> Sanar
+                    </button>
+                </div>
             </div>
+
+            
             <h1 className="character-name">Tiempo de juego: {elapsedTimeFormatted} Seg.</h1>
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
