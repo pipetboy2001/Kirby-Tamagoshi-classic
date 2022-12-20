@@ -3,7 +3,8 @@ import  FAQ  from './Components/FAQ';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import Egg from './Components/Game';
+
+import { Game } from './Components/Game';
 
 
 const TamagoshiGame = () => {
@@ -17,7 +18,8 @@ const TamagoshiGame = () => {
     <>
       <div className='fondo'>
         {/* Tamagoshi */}
-        <Egg />
+        {/* <Egg /> */}
+        <Game />
 
         {/* FAQ */}
         {isFAQVisible && <FAQ toggleFAQ={toggleFAQ} />}
