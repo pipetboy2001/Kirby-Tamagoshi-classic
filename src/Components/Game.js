@@ -12,16 +12,8 @@ import { BiTime } from 'react-icons/bi';
 import { GiLaurelsTrophy } from 'react-icons/gi';
 import { MdOutlineAdsClick } from 'react-icons/md';
 
-export const Game = () => {
-    // Estados para los parámetros de Tamagoshi
-    const [hunger, setHunger] = useState(50);
-    const [happiness, setHappiness] = useState(50);
-    const [age, setAge] = useState(0);
-    const [health, setHealth] = useState(100);
-    const [record, setRecord] = useState(0);
-    const [showModal, setShowModal] = useState(false);
-    const [elapsedTime, setElapsedTime] = useState(0);
-    // Hook para ejecutar un intervalo
+// Components
+const TamagoshiImage = ({ hunger, happiness, health }) => {
     let tamagoshiImage;
     //si hambre es menor o igual a 30 o felicidad es menor o igual a 30 o salud es menor o igual a 30
     if (hunger <= 30 || happiness <= 30 || health <= 30) {
@@ -30,7 +22,6 @@ export const Game = () => {
     //si hambre es igual a 0 o felicidad es igual a 0 o salud es igual a 0
     else if (hunger === 0 || happiness === 0 || health === 0) {
         tamagoshiImage = 'https://i.imgur.com/29jrgnP.png';
-
     }
     //si hambre es mayor a 90 o felicidad es mayor a 90 o salud es mayor a 90
     else if (happiness > 90 && hunger > 95 && health > 90) {
@@ -44,6 +35,22 @@ export const Game = () => {
     else if (hunger > 30 && happiness > 30 && health > 30) {
         tamagoshiImage = 'https://i.imgur.com/EHOnPps.png';
     }
+    return <img src={tamagoshiImage} alt="Tamagoshi" />;
+}
+
+
+
+
+export const Game = () => {
+    // Estados para los parámetros de Tamagoshi
+    const [hunger, setHunger] = useState(50);
+    const [happiness, setHappiness] = useState(50);
+    const [age, setAge] = useState(0);
+    const [health, setHealth] = useState(100);
+    const [record, setRecord] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [elapsedTime, setElapsedTime] = useState(0);
+    
     // Función para actualizar la edad del Tamagoshi
     useInterval(() => {
         setAge(age + 1);
@@ -163,7 +170,8 @@ export const Game = () => {
             <h2 className="character-age"> <GiLaurelsTrophy /> Record: {record} Años</h2>
             <button className='buttonsUp' onClick={() => setShowModal(true)}><MdOutlineAdsClick /> Estado</button>
             <div className="square">
-                <img src={tamagoshiImage} alt="Imagen del cuadrado" />
+                <TamagoshiImage hunger={hunger} happiness={happiness} health={health} />
+                {/* <img src={tamagoshiImage} alt="Imagen del cuadrado" /> */}
             </div>
             <div className="buttons">
                 <button onClick={() => setHunger(Math.min(hunger + 10, 100))}>
@@ -187,9 +195,7 @@ export const Game = () => {
                     Hambre: <ProgressBar now={hunger} variant="warning" label={`${hunger}%`} />
                     Felicidad: <ProgressBar now={happiness} variant="success" label={`${happiness}%`} />
                     Salud: <ProgressBar now={health} variant="info" label={`${health}%`} />
-
                 </Modal.Body>
-
             </Modal>
         </div>
     )
