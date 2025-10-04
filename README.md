@@ -1,12 +1,12 @@
 <div align="center">
-      <h1> <img src="https://kirby.nintendo.com/assets/img/kirby-logo.png" width="80px"><br/>Tamagotchi Kirby</h1>
+      <h1> <img src="https://kirby.nintendo.com/assets/img/kirby-logo.png" width="80px"><br/>Tamagotchi Kirby Classic</h1>
      </div>
 
 
 # Description
 
 
-Este proyecto es un juego de Tamagotchi inspirado en el personaje de Kirby. El juego está desarrollado principalmente en React utilizando JavaScript y CSS y se puede jugar desde la siguiente URL: [http://kirby-tamagoshi.vercel.app/](http://kirby-tamagoshi.vercel.app/).
+Este proyecto es un juego de Tamagotchi inspirado en el personaje de Kirby. El juego está desarrollado principalmente en React utilizando JavaScript y CSS y se puede jugar desde la siguiente URL: [http://kirby-tamagoshi.vercel.app/](http://kirby-tamagoshi.vercel.app/). Fue desarrollado cuando recien empezaba a aprender programacion y lo mantengo como una capsula del tiempo para ver mi progreso
 
 # Características
 Este trabajo no está afiliado ni tiene ninguna relación con Nintendo® , Se utilizo como aprendizaje de JavaScript y CSS para realizar una simulación de las mascotas virtuales Tamagotchi las cuales pueden 
